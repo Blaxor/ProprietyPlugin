@@ -1,0 +1,7 @@
+name: ProprietyPlugin
+version: 1.0
+main: ro.deiutzblaxo.ProprietyPlugin.Main.Main
+api-version: 1.16
+authors: [ Deiutz ]
+commands:
+  test:

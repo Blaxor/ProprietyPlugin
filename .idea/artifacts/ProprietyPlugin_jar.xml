@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ProprietyPlugin:jar">
+    <output-path>$PROJECT_DIR$/../../Java 1.16/plugins</output-path>
+    <root id="archive" name="ProprietyPlugin.jar">
+      <element id="module-output" name="ProprietyPlugin" />
+    </root>
+  </artifact>
+</component>
