@@ -13,7 +13,8 @@ public class LocalPlayerData implements LocalPlayer {
 
     protected Land land;
     protected List<Land> adminLands;
-    protected  Player player;
+    protected final Player player;
+    protected double money;
 
     /**
      *
@@ -52,7 +53,7 @@ public class LocalPlayerData implements LocalPlayer {
      */
     @Override
     public Land getLand() {
-        return null;
+        return land;
     }
 
     /**
@@ -113,7 +114,7 @@ public class LocalPlayerData implements LocalPlayer {
      */
     @Override
     public double getMoney() {
-        return 0;
+        return money;
     }
 
     /**
@@ -122,6 +123,7 @@ public class LocalPlayerData implements LocalPlayer {
      */
     @Override
     public boolean setMoney(double money) {
-        return false;
+        this.money = money;
+        return true;
     }
 }

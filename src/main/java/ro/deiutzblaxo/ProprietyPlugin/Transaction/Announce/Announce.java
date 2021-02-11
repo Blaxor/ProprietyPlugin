@@ -6,15 +6,15 @@ import ro.deiutzblaxo.ProprietyPlugin.shapes.Paralelipiped;
 
 public interface Announce {
 
-	public Player getOwner();
+	Player getOwner();
 
-	public String getName();
+	String getName();
 
-	public String getDescrioption();
+	String getDescrioption();
 
-	public double getValue();
+	double getValue();
 
-	public AnnounceType getType();
+	AnnounceType getType();
 
-	public Paralelipiped getPropriety();
+	Paralelipiped getPropriety();
 }

@@ -8,11 +8,11 @@ import ro.deiutzblaxo.ProprietyPlugin.shapes.Paralelipiped;
 
 public class TransactionData implements Transaction {
 
-	private Player seller;
-	private Player buyer;
-	private double value;
-	private Paralelipiped propriety;
-	private LocalDateTime time;
+	private final Player seller;
+	private final Player buyer;
+	private final double value;
+	private final Paralelipiped propriety;
+	private final LocalDateTime time;
 
 	public TransactionData(Player seller, Player buyer, double value, Paralelipiped propriety, LocalDateTime time) {
 		this.seller = seller;

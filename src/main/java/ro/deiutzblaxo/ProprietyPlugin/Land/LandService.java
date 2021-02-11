@@ -1,21 +1,20 @@
 package ro.deiutzblaxo.ProprietyPlugin.Land;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-
 import ro.deiutzblaxo.ProprietyPlugin.Land.Events.LandCreateEvent;
 import ro.deiutzblaxo.ProprietyPlugin.Player.LocalPlayer;
 import ro.deiutzblaxo.ProprietyPlugin.shapes.Paralelipiped;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LandService {
 	
 
 
 
-	private ArrayList<LandData> lands = new ArrayList<LandData>();
+	private final ArrayList<LandData> lands = new ArrayList<LandData>();
 
 	public  ArrayList<LandData> getLands() {
 		return lands;

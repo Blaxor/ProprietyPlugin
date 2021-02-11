@@ -3,30 +3,29 @@
  */
 package ro.deiutzblaxo.ProprietyPlugin.Land;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-
 import ro.deiutzblaxo.ProprietyPlugin.Land.Events.LandJoinEvent;
 import ro.deiutzblaxo.ProprietyPlugin.Land.Events.LandQuitEvent;
 import ro.deiutzblaxo.ProprietyPlugin.Utilis.Convertor;
 import ro.deiutzblaxo.ProprietyPlugin.shapes.Paralelipiped;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Deiutz
  *
  */
 public class LandData implements Land {
-	private static LAND_FLAGS[] DEFAULT_FLAGS = { LAND_FLAGS.PLACE, LAND_FLAGS.BREAK, LAND_FLAGS.ENTER };
-	private String ID;
-	private Player owner;
-	private List<Player> administrators = new ArrayList<Player>();
-	private Paralelipiped paral;
+	private static final LAND_FLAGS[] DEFAULT_FLAGS = { LAND_FLAGS.PLACE, LAND_FLAGS.BREAK, LAND_FLAGS.ENTER };
+	private final String ID;
+	private final Player owner;
+	private final List<Player> administrators = new ArrayList<Player>();
+	private final Paralelipiped paral;
 	private double value = 0;
-	private List<Player> inProt = new ArrayList<Player>();
-	private List<LAND_FLAGS> flags = new ArrayList<LAND_FLAGS>();
+	private final List<Player> inProt = new ArrayList<Player>();
+	private final List<LAND_FLAGS> flags = new ArrayList<LAND_FLAGS>();
 
 	public LandData(Player owner, Paralelipiped size) {
 		
@@ -39,18 +38,18 @@ public class LandData implements Land {
 
 	@Override
 	public String getID() {
-		return ID;
+		return paral.toString();
 	}
 
 	@Override
 	public Player getOwner() {
-		// TODO Auto-generated method stub
+
 		return owner;
 	}
 
 	@Override
 	public List<Player> getAdministrators() {
-		// TODO Auto-generated method stub
+
 	 return administrators;
 	}
 
@@ -87,7 +86,7 @@ public class LandData implements Land {
 	public void callJoinEvent(Player player) {
 
 
-		if (paral.getAllNodes().contains(Convertor.LocationToVector3(player.getLocation()))
+		if (paral.getBoxNodes().contains(Convertor.LocationToVector3(player.getLocation()))
 				&& !inProt.contains(player)) {
 				Bukkit.getPluginManager().callEvent(new LandJoinEvent(this, player));
 				inProt.add(player);
@@ -98,7 +97,7 @@ public class LandData implements Land {
 
 	@Override
 	public void callQuitEvent(Player player) {
-		if (!paral.getAllNodes().contains(Convertor.LocationToVector3(player.getLocation()))
+		if (!paral.getBoxNodes().contains(Convertor.LocationToVector3(player.getLocation()))
 				&& inProt.contains(player)) {
 			inProt.remove(player);
 			Bukkit.getPluginManager().callEvent(new LandQuitEvent(this, player));

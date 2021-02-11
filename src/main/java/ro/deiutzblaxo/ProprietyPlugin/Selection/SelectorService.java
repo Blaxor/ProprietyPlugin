@@ -10,7 +10,7 @@ import ro.deiutzblaxo.ProprietyPlugin.shapes.Paralelipiped;
 
 public class SelectorService {
 
-	private HashMap<Player, Selector> selectors = new HashMap<Player, Selector>();
+	private final HashMap<Player, Selector> selectors = new HashMap<Player, Selector>();
 
 	public boolean createSelector(Player player) {
 

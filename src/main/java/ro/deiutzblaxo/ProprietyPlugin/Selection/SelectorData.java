@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import ro.deiutzblaxo.ProprietyPlugin.Utilis.Vector3;
 
 public class SelectorData implements Selector {
-	private Player player;
+	private final Player player;
 	private Vector3 leftClickPos;
 	private Vector3 rightClickPos;
 	private Material tool;

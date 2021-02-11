@@ -10,7 +10,7 @@ import ro.deiutzblaxo.ProprietyPlugin.Transaction.Announce.Announce;
 
 public class TransactionService {
 
-	private List<TransactionData> Transactions = new ArrayList<TransactionData>();
+	private final List<TransactionData> Transactions = new ArrayList<TransactionData>();
 	public void doTransation(Announce announce, Player player) {
 		
 		Transactions.add(new TransactionData(announce.getOwner(), player, announce.getValue(), announce.getPropriety(),

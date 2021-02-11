@@ -7,6 +7,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import ro.deiutzblaxo.ProprietyPlugin.Land.Land;
 import ro.deiutzblaxo.ProprietyPlugin.Land.Events.LandQuitEvent;
 import ro.deiutzblaxo.ProprietyPlugin.Main.Main;
+import ro.deiutzblaxo.ProprietyPlugin.Player.LocalPlayerService;
 
 public class PlayerQuit implements Listener {
 	@EventHandler
@@ -15,6 +16,9 @@ public class PlayerQuit implements Listener {
 		for (Land land : Main.landService.getLands()) {
 			land.callQuitEvent(e.getPlayer());
 		}
+		LocalPlayerService.removeLocalPlayer(e.getPlayer());
+
+
 	}
 
 	@EventHandler

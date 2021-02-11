@@ -7,17 +7,17 @@ import ro.deiutzblaxo.ProprietyPlugin.Utilis.Vector3;
 
 public interface Selector {
 
-	public Player getPlayer();
+	Player getPlayer();
 
-	public Vector3 getLeftClick();
+	Vector3 getLeftClick();
 
-	public boolean setLeftClick(Vector3 leftClickPos);
+	boolean setLeftClick(Vector3 leftClickPos);
 
-	public Vector3 getRightClick();
+	Vector3 getRightClick();
 
-	public boolean setRightClick(Vector3 rightClickPos);
+	boolean setRightClick(Vector3 rightClickPos);
 
-	public Material getTool();
+	Material getTool();
 
-	public boolean setTool(Material material);
+	boolean setTool(Material material);
 }

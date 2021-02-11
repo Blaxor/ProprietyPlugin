@@ -5,7 +5,6 @@ import ro.deiutzblaxo.ProprietyPlugin.Land.Land;
 import ro.deiutzblaxo.ProprietyPlugin.Utilis.Vector2;
 import ro.deiutzblaxo.ProprietyPlugin.Utilis.Vector3;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface LocalPlayer  {
@@ -14,27 +13,27 @@ public interface LocalPlayer  {
      *
      * @return The {@link Land} where is owner
      */
-    public Land getLand();
+    Land getLand();
 
     /**
      *
      * @return {@link Land}s where is administrator
      */
-    public List<Land> getAdministratorLand();
+    List<Land> getAdministratorLand();
 
     /**
      *
      * @param land the {@link Land} where is owner
      * @return succes
      */
-    public boolean setLand(Land land);
+    boolean setLand(Land land);
 
     /**
      *
      * @param adminLands the {@link Land}s where is administrator
      * @return succes
      */
-    public boolean setAdministratorLand(List<Land> adminLands);
+    boolean setAdministratorLand(List<Land> adminLands);
 
     /**
      *

@@ -1,20 +1,19 @@
 package ro.deiutzblaxo.ProprietyPlugin.EventHandler;
 
-import java.util.HashMap;
-
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-
-import ro.deiutzblaxo.ProprietyPlugin.Land.Land;
 import ro.deiutzblaxo.ProprietyPlugin.Land.Events.LandJoinEvent;
+import ro.deiutzblaxo.ProprietyPlugin.Land.Land;
 import ro.deiutzblaxo.ProprietyPlugin.Main.Main;
 import ro.deiutzblaxo.ProprietyPlugin.Utilis.Convertor;
 import ro.deiutzblaxo.ProprietyPlugin.Utilis.Vector3;
 
+import java.util.HashMap;
+
 public class PlayerMoveEvent implements Listener {
 
-	protected static HashMap<Player, Vector3> LAST_LOCATION = new HashMap<Player, Vector3>();
+	protected static final HashMap<Player, Vector3> LAST_LOCATION = new HashMap<Player, Vector3>();
 	@EventHandler
 	public void test(org.bukkit.event.player.PlayerMoveEvent event) {
 

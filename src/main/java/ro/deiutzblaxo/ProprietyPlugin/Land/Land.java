@@ -1,10 +1,9 @@
 package ro.deiutzblaxo.ProprietyPlugin.Land;
 
-import java.util.List;
-
 import org.bukkit.entity.Player;
-
 import ro.deiutzblaxo.ProprietyPlugin.shapes.Paralelipiped;
+
+import java.util.List;
 
 public interface Land {
 
@@ -17,7 +16,7 @@ public interface Land {
 
 	Paralelipiped getSize();
 
-	public String getID();
+	String getID();
 
 	double getValue();
 

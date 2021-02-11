@@ -1,21 +1,20 @@
 package ro.deiutzblaxo.ProprietyPlugin.shapes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bukkit.World;
-
 import ro.deiutzblaxo.ProprietyPlugin.Utilis.Vector2;
 import ro.deiutzblaxo.ProprietyPlugin.Utilis.Vector3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Paralelipiped implements Comparable<Paralelipiped> {
-	public Vector2 NodeTopRight;
-	public Vector2 NodeBottomLeft;
-	public Vector2 NodeTopLeft;
-	public Vector2 NodeBottomRight;
-	private float lowestY;
-	private float highestY;
-	public World world;
+	public final Vector2 NodeTopRight;
+	public final Vector2 NodeBottomLeft;
+	public final Vector2 NodeTopLeft;
+	public final Vector2 NodeBottomRight;
+	private final float lowestY;
+	private final float highestY;
+	public final World world;
 
 	public Paralelipiped(Vector2 left, Vector2 right, float y1, float y2, World world) {
 
@@ -38,18 +37,6 @@ public class Paralelipiped implements Comparable<Paralelipiped> {
 		NodeTopRight = new Vector2(NodeBottomRight.getX(), NodeTopLeft.getY());
 		NodeBottomLeft = new Vector2(NodeTopLeft.getX(), NodeBottomRight.getY());
 	}
-
-//	public boolean checkInRegion(Location loc, Location block1, Location block2) {
-//		int x1 = Math.min(block1.getBlockX(), block2.getBlockX());
-//		int y1 = Math.min(block1.getBlockY(), block2.getBlockY());
-//		int z1 = Math.min(block1.getBlockZ(), block2.getBlockZ());
-//		int x2 = Math.max(block1.getBlockX(), block2.getBlockX());
-//		int y2 = Math.max(block1.getBlockY(), block2.getBlockY());
-//		int z2 = Math.max(block1.getBlockZ(), block2.getBlockZ());
-//
-//		return loc.getBlockX() >= x1 && loc.getBlockX() <= x2 && loc.getBlockY() >= y1 && loc.getBlockY() <= y2
-//				&& loc.getBlockZ() >= z1 && loc.getBlockZ() <= z2;
-//	}
 
 
 	public Vector3 getMiddle() {
@@ -222,7 +209,7 @@ public class Paralelipiped implements Comparable<Paralelipiped> {
 	@Override
 	public String toString() {
 
-		return "NodeTopLeft:" + NodeTopLeft + "\n NodeTopRight:" + "\n NodeBottomRight" + NodeBottomRight;
+		return getMiddle().toString();
 	}
 
 	public float getLowestY() {
@@ -232,20 +219,6 @@ public class Paralelipiped implements Comparable<Paralelipiped> {
 	public float getHighestY() {
 		return highestY;
 	}
-	
-//	public boolean isInArea(org.bukkit.Location loc) {
-//	    Vector3 vec = NodeTopRight.toVector3(getHighestY());
-//		Vector3 vec1 = NodeBottomLeft.toVector3(getLowestY());
-//		return (
-//	    		vec.getX() <= loc.getX()
-//	        && vec.getY() <= loc.getY()
-//	        && vec.getZ() <= loc.getZ()
-//	        
-//	        && vec1.getX() >= loc.getX()
-//	        && vec1.getY() >= loc.getY()
-//	        && vec1.getZ() >= loc.getZ()
-//	    );
-//	}
 
 	@Override
 	public int compareTo(Paralelipiped args) {

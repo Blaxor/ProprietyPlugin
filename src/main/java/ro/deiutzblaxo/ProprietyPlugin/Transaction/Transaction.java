@@ -8,15 +8,15 @@ import ro.deiutzblaxo.ProprietyPlugin.shapes.Paralelipiped;
 
 public interface Transaction {
 
-	public Player getSeller();
+	Player getSeller();
 
-	public Player getBuyer();
+	Player getBuyer();
 
-	public double getValue();
+	double getValue();
 
-	public Paralelipiped getPropriety();
+	Paralelipiped getPropriety();
 
-	public LocalDateTime getTime();
+	LocalDateTime getTime();
 
 
 }
